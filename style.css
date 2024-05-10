@@ -21,7 +21,7 @@ body {
 .box-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 30px;
   padding: 40px 20px;
@@ -30,6 +30,7 @@ body {
 
 .box {
   width: 20rem;
+  height: 100%;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(255, 255, 255, 0.15);
@@ -38,25 +39,60 @@ body {
   padding: 30px;
   position: relative;
   text-align: center;
+}
 
-  h2 {
-    font-size: 22px;
-    color: #6e515e;
-    margin-bottom: 20px;
+h2 {
+  font-size: 22px;
+  color: #6e515e;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #6e515ec1;
+}
+
+.view-button {
+  background-color: #aa4b6b;
+  border-radius: 50%;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.box:hover {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.55);
+}
+
+@media only screen and (max-width: 1024px) {
+  .box-container {
+    max-width: 100vw;
+    gap: 25px;
   }
 
-  p {
-    font-size: 14px;
-    line-height: 20px;
-    color: #6e515ec1;
+  .box {
+    width: 15rem;
+    padding: 25px;
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .box-container {
+    gap: 15px;
   }
 
-  .view-button {
-    background-color: #aa4b6b;
-    border-radius: 50%;
-    padding: 15px 20px;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+  .box {
+    width: 10rem;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .box {
+    width: 80vw;
+    padding: 20px;
   }
 }
